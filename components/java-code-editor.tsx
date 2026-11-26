@@ -3,11 +3,19 @@
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
-const MONACO_LOAD_TIMEOUT_MS = 4500;
+const MONACO_LOAD_TIMEOUT_MS = 5000;
 
-const MonacoEditor = dynamic(() => import("@monaco-editor/react"), {
-  ssr: false,
-});
+const MonacoEditor = dynamic(
+  async () => {
+    const [{ default: Editor, loader }, monaco] = await Promise.all([
+      import("@monaco-editor/react"),
+      import("monaco-editor"),
+    ]);
+    loader.config({ monaco });
+    return Editor;
+  },
+  { ssr: false }
+);
 
 interface JavaCodeEditorProps {
   value: string;
@@ -76,20 +84,18 @@ export function JavaCodeEditor({
   height = "280px",
 }: JavaCodeEditorProps) {
   const [useFallback, setUseFallback] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const [timedOut, setTimedOut] = useState(false);
+  const [monacoReady, setMonacoReady] = useState(false);
 
   useEffect(() => {
-    if (useFallback || isMounted) {
+    if (useFallback || monacoReady) {
       return;
     }
     const timer = window.setTimeout(() => {
-      setTimedOut(true);
       setUseFallback(true);
     }, MONACO_LOAD_TIMEOUT_MS);
 
     return () => window.clearTimeout(timer);
-  }, [useFallback, isMounted]);
+  }, [useFallback, monacoReady]);
 
   if (useFallback) {
     return (
@@ -103,21 +109,17 @@ export function JavaCodeEditor({
         />
         <div className="flex items-center justify-between text-xs text-slate-500">
           <span>
-            {timedOut
-              ? "Plain dark editor active (Monaco CDN timed out)"
-              : "Plain dark editor active"}
-            {highlightedLines.length > 0 ? ` | Focus lines: ${highlightedLines.join(", ")}` : ""}
+            Plain dark editor (fallback){highlightedLines.length > 0 ? ` | Focus lines: ${highlightedLines.join(", ")}` : ""}
           </span>
           <button
             type="button"
             onClick={() => {
-              setTimedOut(false);
-              setIsMounted(false);
+              setMonacoReady(false);
               setUseFallback(false);
             }}
             className="text-slate-500 hover:text-slate-700 underline cursor-pointer"
           >
-            Retry Monaco editor
+            Try Monaco editor
           </button>
         </div>
       </div>
@@ -143,8 +145,7 @@ export function JavaCodeEditor({
             </div>
           }
           onMount={(editor, monaco) => {
-            setIsMounted(true);
-            setTimedOut(false);
+            setMonacoReady(true);
             if (highlightedLines.length > 0) {
               const decorations = highlightedLines.map((lineNumber) => ({
                 range: new monaco.Range(lineNumber, 1, lineNumber, 1),
