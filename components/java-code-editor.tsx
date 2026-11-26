@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+
+const MONACO_LOAD_TIMEOUT_MS = 4500;
 
 const MonacoEditor = dynamic(() => import("@monaco-editor/react"), {
   ssr: false,
@@ -74,16 +76,51 @@ export function JavaCodeEditor({
   height = "280px",
 }: JavaCodeEditorProps) {
   const [useFallback, setUseFallback] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  const [timedOut, setTimedOut] = useState(false);
+
+  useEffect(() => {
+    if (useFallback || isMounted) {
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      setTimedOut(true);
+      setUseFallback(true);
+    }, MONACO_LOAD_TIMEOUT_MS);
+
+    return () => window.clearTimeout(timer);
+  }, [useFallback, isMounted]);
 
   if (useFallback) {
     return (
-      <FallbackLineNumberedEditor
-        value={value}
-        onChange={onChange}
-        readOnly={readOnly}
-        highlightedLines={highlightedLines}
-        height={height}
-      />
+      <div className="space-y-1.5">
+        <FallbackLineNumberedEditor
+          value={value}
+          onChange={onChange}
+          readOnly={readOnly}
+          highlightedLines={highlightedLines}
+          height={height}
+        />
+        <div className="flex items-center justify-between text-xs text-slate-500">
+          <span>
+            {timedOut
+              ? "Plain dark editor active (Monaco CDN timed out)"
+              : "Plain dark editor active"}
+            {highlightedLines.length > 0 ? ` | Focus lines: ${highlightedLines.join(", ")}` : ""}
+          </span>
+          <button
+            type="button"
+            onClick={() => {
+              setTimedOut(false);
+              setIsMounted(false);
+              setUseFallback(false);
+            }}
+            className="text-slate-500 hover:text-slate-700 underline cursor-pointer"
+          >
+            Retry Monaco editor
+          </button>
+        </div>
+      </div>
     );
   }
 
@@ -106,6 +143,8 @@ export function JavaCodeEditor({
             </div>
           }
           onMount={(editor, monaco) => {
+            setIsMounted(true);
+            setTimedOut(false);
             if (highlightedLines.length > 0) {
               const decorations = highlightedLines.map((lineNumber) => ({
                 range: new monaco.Range(lineNumber, 1, lineNumber, 1),
