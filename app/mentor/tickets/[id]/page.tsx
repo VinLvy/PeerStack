@@ -54,6 +54,7 @@ export default function MentorTicketWorkspacePage({
   const [rejectMode, setRejectMode] = useState(false);
   const [rejectionReason, setRejectionReason] = useState("");
   const [confirmFlagged, setConfirmFlagged] = useState(false);
+  const [mentorVerified, setMentorVerified] = useState(false);
   const [showSimilar, setShowSimilar] = useState(false);
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [submitError, setSubmitError] = useState("");
@@ -76,6 +77,7 @@ export default function MentorTicketWorkspacePage({
       setRejectMode(false);
       setRejectionReason("");
       setConfirmFlagged(false);
+      setMentorVerified(false);
       setSubmitError("");
       setDeliveredNow(false);
       setElapsedSeconds(0);
@@ -123,6 +125,7 @@ export default function MentorTicketWorkspacePage({
   const handleTestGuardrailBlock = () => {
     setHint2(FULL_SOLUTION_DEMO_SNIPPET);
     setConfirmFlagged(false);
+    setMentorVerified(false);
     setSubmitError("");
   };
 
@@ -132,6 +135,7 @@ export default function MentorTicketWorkspacePage({
       setHint2(ticket.ai_draft.hint_2);
       setRejectMode(false);
       setConfirmFlagged(false);
+      setMentorVerified(false);
       setSubmitError("");
     }
   };
@@ -141,12 +145,19 @@ export default function MentorTicketWorkspacePage({
     setHint1("");
     setHint2("");
     setConfirmFlagged(false);
+    setMentorVerified(false);
     setSubmitError("");
   };
 
   const handleDeliver = (action: MentorDeliveryAction) => {
     if (!hint1.trim() || !hint2.trim()) {
       setSubmitError("Both Hint 1 and Hint 2 are required before sending.");
+      return;
+    }
+    if (!mentorVerified) {
+      setSubmitError(
+        "Please tick the mentor verification checkbox to confirm conceptual accuracy before sending."
+      );
       return;
     }
     if (action === "rejected_rewritten" && rejectionReason.trim().length < 5) {
@@ -483,6 +494,24 @@ export default function MentorTicketWorkspacePage({
             </div>
           )}
 
+          {/* Human-in-the-Loop Verification Checkbox */}
+          {!isAlreadyDelivered && (
+            <label className="flex items-start gap-2.5 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] px-3.5 py-3 text-xs font-semibold text-[#0F172A] cursor-pointer">
+              <input
+                type="checkbox"
+                checked={mentorVerified}
+                onChange={(e) => {
+                  setMentorVerified(e.target.checked);
+                  if (e.target.checked) setSubmitError("");
+                }}
+                className="mt-0.5 h-4 w-4 rounded border-slate-300 text-[#059669] focus:ring-[#059669]"
+              />
+              <span>
+                I have reviewed both hints and verified they are conceptually accurate, syllabus-aligned, and Socratic (human-in-the-loop sign-off).
+              </span>
+            </label>
+          )}
+
           {/* Action Buttons */}
           {!isAlreadyDelivered ? (
             <div className="pt-2 flex flex-wrap items-center gap-2.5 border-t border-[#E2E8F0]">
@@ -490,7 +519,12 @@ export default function MentorTicketWorkspacePage({
                 <>
                   <button
                     type="button"
-                    disabled={isBlocked || draftEdited || (isFlagged && !confirmFlagged)}
+                    disabled={
+                      isBlocked ||
+                      draftEdited ||
+                      !mentorVerified ||
+                      (isFlagged && !confirmFlagged)
+                    }
                     onClick={() => handleDeliver("approved")}
                     className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#059669] hover:bg-emerald-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-semibold text-sm cursor-pointer"
                   >
@@ -499,7 +533,12 @@ export default function MentorTicketWorkspacePage({
                   </button>
                   <button
                     type="button"
-                    disabled={isBlocked || !draftEdited || (isFlagged && !confirmFlagged)}
+                    disabled={
+                      isBlocked ||
+                      !draftEdited ||
+                      !mentorVerified ||
+                      (isFlagged && !confirmFlagged)
+                    }
                     onClick={() => handleDeliver("edited")}
                     className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#2563EB] hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-semibold text-sm cursor-pointer"
                   >
@@ -516,7 +555,11 @@ export default function MentorTicketWorkspacePage({
               ) : (
                 <button
                   type="button"
-                  disabled={isBlocked || (isFlagged && !confirmFlagged)}
+                  disabled={
+                    isBlocked ||
+                    !mentorVerified ||
+                    (isFlagged && !confirmFlagged)
+                  }
                   onClick={() =>
                     handleDeliver(
                       ticket.arm === "manual" ? "edited" : "rejected_rewritten"

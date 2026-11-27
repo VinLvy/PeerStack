@@ -197,54 +197,7 @@ export default function MenteeTicketDetailPage({
             )}
           </div>
 
-          {/* Optional 1-Round Follow-Up (Simulated) */}
-          <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-3 shadow-xs">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-2 text-sm font-bold text-[#0F172A]">
-                <MessageSquare className="w-4 h-4 text-[#2563EB]" />
-                <span>Optional 1-Round Follow-Up</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-[#EFF6FF] text-[#1D4ED8] border border-blue-200">
-                  Simulated
-                </span>
-                <span className="text-xs font-semibold text-slate-600">
-                  {ticket.followup ? "1/1 used" : "0/1 used"}
-                </span>
-              </div>
-            </div>
-
-            {ticket.followup ? (
-              <div className="space-y-2 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] p-4 text-sm">
-                <div>
-                  <strong className="text-[#0F172A]">Your follow-up:</strong>{" "}
-                  <span className="text-slate-700">{ticket.followup.question_sanitized}</span>
-                </div>
-                <div className="text-xs text-[#1D4ED8] bg-[#EFF6FF] border border-blue-200 rounded-md p-2.5">
-                  {ticket.followup.simulated_reply}
-                </div>
-              </div>
-            ) : (
-              <form onSubmit={handleFollowUpSubmit} className="space-y-2.5">
-                <textarea
-                  rows={2}
-                  value={followUpText}
-                  onChange={(e) => setFollowUpText(e.target.value)}
-                  placeholder="Ask one concise clarifying question if you are still unsure after trying Hint 1 and Hint 2 (Simulated - no live reply in prototype)..."
-                  className="w-full rounded-lg border border-[#E2E8F0] px-3 py-2 text-sm text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
-                />
-                <button
-                  type="submit"
-                  disabled={!followUpText.trim()}
-                  className="px-4 py-2 rounded-lg border border-[#E2E8F0] bg-white hover:bg-slate-50 disabled:opacity-50 text-xs font-semibold text-[#0F172A] cursor-pointer"
-                >
-                  Log Follow-Up (Simulated, 0/1)
-                </button>
-              </form>
-            )}
-          </div>
-
-          {/* Clarity Rating & Unblocked Status */}
+          {/* Clarity Rating & Unblocked Status (Primary Action) */}
           <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-4 shadow-xs">
             <h2 className="text-base font-bold text-[#0F172A]">
               Rate Clarity &amp; Unblocked Outcome
@@ -341,6 +294,53 @@ export default function MenteeTicketDetailPage({
                 >
                   <CheckCircle2 className="w-4 h-4" />
                   <span>Submit Rating &amp; Close Ticket</span>
+                </button>
+              </form>
+            )}
+          </div>
+
+          {/* Optional 1-Round Follow-Up (Simulated) */}
+          <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 space-y-3 shadow-xs">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2 text-sm font-bold text-[#0F172A]">
+                <MessageSquare className="w-4 h-4 text-[#2563EB]" />
+                <span>Optional 1-Round Follow-Up</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded-full text-xs font-semibold bg-[#EFF6FF] text-[#1D4ED8] border border-blue-200">
+                  Simulated
+                </span>
+                <span className="text-xs font-semibold text-slate-600">
+                  {ticket.followup ? "1/1 used" : "0/1 used"}
+                </span>
+              </div>
+            </div>
+
+            {ticket.followup ? (
+              <div className="space-y-2 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] p-4 text-sm">
+                <div>
+                  <strong className="text-[#0F172A]">Your follow-up:</strong>{" "}
+                  <span className="text-slate-700">{ticket.followup.question_sanitized}</span>
+                </div>
+                <div className="text-xs text-[#1D4ED8] bg-[#EFF6FF] border border-blue-200 rounded-md p-2.5">
+                  {ticket.followup.simulated_reply}
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleFollowUpSubmit} className="space-y-2.5">
+                <textarea
+                  rows={2}
+                  value={followUpText}
+                  onChange={(e) => setFollowUpText(e.target.value)}
+                  placeholder="Ask one concise clarifying question if you are still unsure after trying Hint 1 and Hint 2 (Simulated - no live reply in prototype)..."
+                  className="w-full rounded-lg border border-[#E2E8F0] px-3 py-2 text-sm text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
+                />
+                <button
+                  type="submit"
+                  disabled={!followUpText.trim()}
+                  className="px-4 py-2 rounded-lg border border-[#E2E8F0] bg-white hover:bg-slate-50 disabled:opacity-50 text-xs font-semibold text-[#0F172A] cursor-pointer"
+                >
+                  Log Follow-Up (Simulated, 0/1)
                 </button>
               </form>
             )}
