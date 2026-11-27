@@ -2,11 +2,15 @@
   "name": "peerstack",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "vitest run"
+    "test": "vitest run",
+    "testc:dry": "node scripts/testc/benchmark_gemini_v2.mjs --dry",
+    "testc:run": "node scripts/testc/benchmark_gemini_v2.mjs",
+    "testc:summarize": "node scripts/testc/benchmark_gemini_v2.mjs --summarize"
   },
   "dependencies": {
     "@monaco-editor/react": "4.7.0",
