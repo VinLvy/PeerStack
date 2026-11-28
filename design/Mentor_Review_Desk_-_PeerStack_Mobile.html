@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary-container": "#7645e0", "on-tertiary-container": "#ece1ff", "surface-container-highest": "#e3e1ed", "surface-variant": "#e3e1ed", "secondary": "#5f5e61", "on-secondary-fixed-variant": "#47464a", "surface-container-lowest": "#ffffff", "on-primary-fixed-variant": "#5a00c6", "on-error-container": "#93000a", "error-container": "#ffdad6", "on-background": "#1a1b23", "inverse-surface": "#2f3039", "surface": "#fbf8ff", "inverse-primary": "#d2bbff", "on-error": "#ffffff", "on-primary-container": "#ede0ff", "tertiary-fixed-dim": "#d0bcff", "primary": "#630ed4", "on-secondary-fixed": "#1b1b1e", "outline": "#7b7487", "inverse-on-surface": "#f1effb", "surface-tint": "#732ee4", "primary-container": "#7c3aed", "secondary-fixed-dim": "#c8c5ca", "on-tertiary": "#ffffff", "primary-fixed-dim": "#d2bbff", "on-secondary-container": "#656467", "on-tertiary-fixed": "#23005c", "surface-dim": "#dad9e4", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#5516be", "tertiary": "#5d25c7", "outline-variant": "#ccc3d8", "secondary-container": "#e4e1e6", "surface-container": "#eeecf8", "surface-bright": "#fbf8ff", "on-surface": "#1a1b23", "on-primary-fixed": "#25005a", "on-surface-variant": "#4a4455", "tertiary-fixed": "#e9ddff", "on-secondary": "#ffffff", "surface-container-high": "#e9e7f3", "error": "#ba1a1a", "primary-fixed": "#eaddff", "background": "#fbf8ff", "secondary-fixed": "#e4e1e6", "surface-container-low": "#f4f2fe" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-xl": "2rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin": "1.5rem", "space-xs": "0.25rem", "gutter": "1.25rem" }, fontFamily: { "body-md": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "title-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"], "display-lg-mobile": ["Inter"], "display-lg": ["Inter"], "headline-lg": ["Inter"] }, fontSize: { "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-primary"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[20px]">code_blocks</span></div><div class="flex flex-col"><div class="flex items-center gap-1"><span class="font-title-md text-title-md text-on-surface tracking-tight leading-none">PeerStack</span><span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant leading-none font-bold">IF101</span></div><span class="font-label-sm text-label-sm text-on-surface-variant truncate max-w-[120px]">Mentor Review Desk</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Switch Socratic Mode" class="min-h-[44px] min-w-[44px] px-2 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest transition-colors flex items-center gap-1.5 text-on-surface-variant hover:text-on-surface" type="button"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface font-medium">Peer</span><span class="material-symbols-outlined text-[16px]">unfold_more</span></button><button aria-label="View notifications" class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface px-gutter"><div class="flex flex-col w-full pb-8 space-y-space-md">
+<!-- Mentee Case Header Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-32 h-32 bg-primary-fixed/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-semibold tracking-wide">#T-104</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-medium">Recursion</span>
+</div>
+<!-- SLA Live Timer -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shadow-sm" id="sla-pill">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="material-symbols-outlined text-[15px]">timer</span>
+<span class="font-semibold" id="sla-timer">00:48</span>
+<span class="text-on-tertiary-fixed-variant text-[11px]">(Target &lt; 03:00)</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface leading-tight">Mentee-A42</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Anonymous Student Submission</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Skip ticket" class="h-8 px-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm transition-colors" type="button">Skip</button>
+<button aria-label="Escalate ticket" class="h-8 px-2.5 rounded-lg bg-error-container text-on-error-container font-label-sm text-label-sm transition-colors" type="button">Escalate</button>
+</div>
+</div>
+<!-- Regex Redaction & Privacy Status -->
+<div class="flex items-center justify-between bg-surface-container-low px-3 py-2 rounded-lg mt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Privacy Shield Applied</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-medium">3 PII scrubbed</span>
+</div>
+</div>
+<!-- Mobile Code Inspector Card -->
+<div class="w-full bg-[#0F172A] rounded-2xl overflow-hidden shadow-md flex flex-col text-slate-100">
+<!-- Code card header bar -->
+<div class="px-4 py-2.5 bg-slate-900/90 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-[11px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-primary-container text-white">Java 21</span>
+<span class="font-body-sm text-body-sm text-slate-400">RecursiveEngine.java</span>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-label-sm text-label-sm transition-colors" id="copy-code-btn" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+<!-- Code Editor Surface with Hazard Line -->
+<div class="p-3 font-mono text-[12px] leading-relaxed select-text overflow-x-auto">
+<div class="flex text-slate-500">
+<span class="w-6 shrink-0 select-none text-right pr-3">1</span>
+<span class="text-violet-400">public class</span> <span class="text-amber-300">RecursiveEngine</span> {
+      </div>
+<div class="flex text-slate-500">
+<span class="w-6 shrink-0 select-none text-right pr-3">2</span>
+<span class="pl-4 text-violet-400">public int</span> <span class="text-blue-400">compute</span>(<span class="text-violet-400">int</span> <span class="text-slate-200">n</span>) {
+      </div>
+<div class="flex text-slate-500">
+<span class="w-6 shrink-0 select-none text-right pr-3">3</span>
+<span class="pl-8 text-slate-400">// Base condition check</span>
+</div>
+<!-- Hazard line highlighted -->
+<div class="flex bg-rose-500/20 text-rose-200 rounded-sm -mx-2 px-2 py-0.5 my-0.5">
+<span class="w-6 shrink-0 select-none text-right pr-3 text-rose-400 font-semibold">4</span>
+<span class="pl-8 text-violet-400">if</span> (<span class="text-slate-100">n == 0</span>) <span class="text-violet-400">return</span> <span class="text-emerald-300">1</span>;
+      </div>
+<!-- Inlined Hazard Warning Chip -->
+<div class="ml-9 my-1.5 flex items-center gap-1.5 px-2.5 py-1 rounded bg-error-container text-on-error-container font-sans text-label-sm font-semibold max-w-fit shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-error">report_problem</span>
+<span>Line 4: Unbounded recursion on n &lt;= 0</span>
+</div>
+<div class="flex text-slate-500">
+<span class="w-6 shrink-0 select-none text-right pr-3">5</span>
+<span class="pl-8 text-violet-400">return</span> <span class="text-slate-200">n * compute(n - 1);</span>
+</div>
+<div class="flex text-slate-500">
+<span class="w-6 shrink-0 select-none text-right pr-3">6</span>
+<span class="pl-4">}</span>
+</div>
+<div class="flex text-slate-500">
+<span class="w-6 shrink-0 select-none text-right pr-3">7</span>
+<span>}</span>
+</div>
+</div>
+</div>
+<!-- Execution Trace Collapsible Drawer -->
+<div class="w-full bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<button class="w-full px-space-md py-3 flex items-center justify-between bg-error-container/40 text-on-error-container text-left transition-colors" id="trace-toggle" type="button">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+<span class="font-title-md text-title-md truncate">JVM Crash: java.lang.StackOverflowError</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform" id="trace-chevron">expand_more</span>
+</button>
+<div class="p-space-md font-mono text-[11px] leading-5 text-on-surface-variant bg-surface-container-low hidden" id="trace-body">
+<div class="text-error font-semibold pb-1">Exception in thread "main" java.lang.StackOverflowError</div>
+<div class="pl-2">at RecursiveEngine.compute(RecursiveEngine.java:5)</div>
+<div class="pl-2">at RecursiveEngine.compute(RecursiveEngine.java:5)</div>
+<div class="pl-2">at RecursiveEngine.compute(RecursiveEngine.java:5)</div>
+<div class="pl-2 text-slate-400">... [repeats 1024 times across thread frames]</div>
+<div class="mt-2 text-on-surface font-sans text-label-sm font-medium bg-surface-container px-2.5 py-1 rounded">
+        Invoked payload argument: <code class="font-mono text-primary font-bold">compute(-3)</code>
+</div>
+</div>
+</div>
+<!-- Student Stated Diagnosis -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Student Stated Hypothesis</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container">Self-Report</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 relative">
+<span class="material-symbols-outlined absolute top-2 right-2 text-outline-variant text-[24px]">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface italic pr-6">
+        "I tested `compute(4)` and got 24 correctly, but whenever our automated grading pipeline injects negative numbers it freezes and crashes with recursion depth errors. Is my factorial formula completely inverted?"
+      </p>
+</div>
+</div>
+<!-- Socratic Diagnostic Assistant Telemetry -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">neurology</span>
+</div>
+<div>
+<div class="font-title-md text-title-md text-on-surface">Socratic Diagnostic Model</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Real-time pedagogical dial</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold">v4.2 Audited</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col gap-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dialectic Purity</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">98.4%</span>
+<span class="font-label-sm text-label-sm text-emerald-700 font-semibold">High</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 98.4%"></div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col gap-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Leakage Risk</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm text-amber-600 font-bold">24%</span>
+<span class="font-label-sm text-label-sm text-amber-700 font-medium">Moderate</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 24%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Socratic Hint Iteration Cards -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<span class="font-title-md text-title-md text-on-surface">Prepared Socratic Interventions</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">2 Tiers Ready</span>
+</div>
+<!-- Hint 1: Primary Discovery Question -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold">Hint 1</span>
+<span class="font-title-md text-title-md text-on-surface">Discovery Question</span>
+</div>
+<div class="flex items-center gap-1 text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">format_image_left</span>
+<span>98% Alignment</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-xl text-on-surface font-body-md text-body-md leading-relaxed">
+        "Notice what happens inside the call stack when <code class="text-primary font-semibold">compute()</code> receives an input strictly less than zero. Does <code class="text-primary font-semibold">n == 0</code> ever evaluate to true as <code class="text-primary font-semibold">n</code> decrements further into negative infinity?"
+      </div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">lightbulb</span>
+          Prompts base-case domain reflection
+        </span>
+<button class="text-primary font-label-sm text-label-sm font-semibold hover:underline" type="button">Edit Prompt</button>
+</div>
+</div>
+<!-- Hint 2: Fallback Deeper Pointer -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-bold">Hint 2</span>
+<span class="font-title-md text-title-md text-on-surface">Deeper Pointer</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tiered Fallback</span>
+</div>
+<div class="bg-surface-container-low p-3.5 rounded-xl text-on-surface-variant font-body-md text-body-md leading-relaxed">
+        "Consider what boundary conditions define a valid mathematical factorial operand. What guard condition could validate inputs before recursion commences?"
+      </div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Delivers only if Mentee asks for follow-up</span>
+<button class="text-on-surface-variant font-label-sm text-label-sm hover:underline" type="button">Adjust</button>
+</div>
+</div>
+</div>
+<!-- Integrity Guardrail #2 Leakage Trap Alert Banner -->
+<div class="w-full bg-error-container text-on-error-container rounded-xl p-space-md shadow-sm flex flex-col gap-2 relative">
+<div class="flex items-start gap-2.5">
+<div class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-bold">Integrity Guardrail #2 Triggered</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider bg-on-error-container/10 px-2 py-0.5 rounded font-bold">Intercepted</span>
+</div>
+<p class="font-body-sm text-body-sm mt-1">
+          Direct solution leakage detected in proposed reviewer draft note: direct executable code <code class="font-mono bg-on-error-container/10 px-1 py-0.5 rounded text-error font-semibold">return 1;</code> was automatically scrubbed to preserve dialectic learning.
+        </p>
+</div>
+</div>
+</div>
+<!-- Floating Sticky Action Deck for Mentors -->
+<div class="w-full bg-surface-container-lowest rounded-2xl p-space-md shadow-lg flex flex-col gap-2.5 mt-2">
+<div class="grid grid-cols-2 gap-2">
+<button class="h-11 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+<span>Save Draft</span>
+</button>
+<button class="h-11 rounded-xl bg-error-container/50 hover:bg-error-container text-on-error-container font-label-lg text-label-lg transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+<span>Reject / Flag</span>
+</button>
+</div>
+<!-- Approve & Send Primary Trigger -->
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-tertiary text-on-primary font-title-md text-title-md font-semibold shadow-md flex items-center justify-center gap-2 transition-all active:scale-[0.99]" id="approve-dispatch-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">send_spark</span>
+<span>Approve &amp; Send Hints to Mentee</span>
+</button>
+</div>
+</div>
+<script>
+  // Trace accordion toggle
+  const traceToggle = document.getElementById('trace-toggle');
+  const traceBody = document.getElementById('trace-body');
+  const traceChevron = document.getElementById('trace-chevron');
+
+  if (traceToggle && traceBody && traceChevron) {
+    traceToggle.addEventListener('click', () => {
+      const isHidden = traceBody.classList.contains('hidden');
+      if (isHidden) {
+        traceBody.classList.remove('hidden');
+        traceChevron.textContent = 'expand_less';
+      } else {
+        traceBody.classList.add('hidden');
+        traceChevron.textContent = 'expand_more';
+      }
+    });
+  }
+
+  // Interactive Live Timer simulation
+  let seconds = 48;
+  const timerElement = document.getElementById('sla-timer');
+  if (timerElement) {
+    setInterval(() => {
+      seconds++;
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      timerElement.textContent = 
+        String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+    }, 1000);
+  }
+
+  // Copy code feedback micro-interaction
+  const copyBtn = document.getElementById('copy-code-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const spanText = copyBtn.querySelector('span:last-child');
+      const origText = spanText ? spanText.textContent : 'Copy';
+      if (spanText) spanText.textContent = 'Copied!';
+      setTimeout(() => {
+        if (spanText) spanText.textContent = origText;
+      }, 1500);
+    });
+  }
+
+  // Approval feedback micro-interaction
+  const approveBtn = document.getElementById('approve-dispatch-btn');
+  if (approveBtn) {
+    approveBtn.addEventListener('click', () => {
+      approveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Dispatched to Mentee-A42</span>';
+      approveBtn.classList.remove('bg-primary');
+      approveBtn.classList.add('bg-tertiary-container', 'text-on-tertiary-container');
+      setTimeout(() => {
+        approveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">send_spark</span><span>Approve &amp; Send Hints to Mentee</span>';
+        approveBtn.classList.add('bg-primary');
+        approveBtn.classList.remove('bg-tertiary-container', 'text-on-tertiary-container');
+      }, 2500);
+    });
+  }
+</script></main><div class="fixed bottom-0 w-full z-50 pointer-events-none pb-safe"><div class="px-margin pb-space-sm flex justify-center"><nav class="pointer-events-auto w-full max-w-md bg-surface-container-lowest/90 backdrop-blur-2xl rounded-full shadow-[0_12px_36px_-6px_rgba(26,27,35,0.12)] p-1.5 flex items-center justify-between" data-active-classes="bg-primary text-on-primary shadow-sm font-semibold"><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center rounded-full py-1 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="algorithms-hub" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-sm text-[10px] tracking-tight leading-none">Home</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center rounded-full py-1 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="submission-pipeline" href="#"><span class="material-symbols-outlined text-[20px]">view_kanban</span><span class="font-label-sm text-[10px] tracking-tight leading-none">Queue</span></a><a aria-current="page" class="flex-1 min-h-[44px] flex flex-col items-center justify-center rounded-full py-1 transition-all gap-0.5 bg-primary text-on-primary shadow-sm font-semibold" data-path="mentor-review-desk" href="#"><span class="material-symbols-outlined text-[20px]">rate_review</span><span class="font-label-sm text-[10px] tracking-tight leading-none">Review</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center rounded-full py-1 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="socratic-hints" href="#"><span class="material-symbols-outlined text-[20px]">psychology_alt</span><span class="font-label-sm text-[10px] tracking-tight leading-none">Hints</span></a><a class="flex-1 min-h-[44px] flex flex-col items-center justify-center rounded-full py-1 text-on-surface-variant hover:text-on-surface transition-all gap-0.5" data-path="mastery-metrics" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span class="font-label-sm text-[10px] tracking-tight leading-none">Metrics</span></a></nav></div></div></body></html>

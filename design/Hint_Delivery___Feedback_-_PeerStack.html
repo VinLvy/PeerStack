@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>PeerStack - IF101 Algorithms</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error-container":"#ffdad6","secondary":"#5f5e61","surface-dim":"#dad9e4","on-tertiary":"#ffffff","tertiary-fixed-dim":"#d0bcff","on-primary-fixed":"#25005a","secondary-fixed-dim":"#c8c5ca","tertiary-container":"#7645e0","primary-fixed":"#eaddff","surface-container-high":"#e9e7f3","on-background":"#1a1b23","on-error":"#ffffff","surface-bright":"#fbf8ff","surface-container-low":"#f4f2fe","surface-container-highest":"#e3e1ed","on-primary-fixed-variant":"#5a00c6","tertiary-fixed":"#e9ddff","inverse-primary":"#d2bbff","on-secondary":"#ffffff","on-secondary-container":"#656467","on-tertiary-fixed-variant":"#5516be","on-tertiary-container":"#ece1ff","outline-variant":"#ccc3d8","outline":"#7b7487","secondary-container":"#e4e1e6","primary-fixed-dim":"#d2bbff","on-error-container":"#93000a","secondary-fixed":"#e4e1e6","tertiary":"#5d25c7","surface-variant":"#e3e1ed","inverse-on-surface":"#f1effb","error":"#ba1a1a","on-primary":"#ffffff","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#47464a","surface-container":"#eeecf8","primary":"#630ed4","on-tertiary-fixed":"#23005c","background":"#fbf8ff","inverse-surface":"#2f3039","on-secondary-fixed":"#1b1b1e","surface":"#fbf8ff","primary-container":"#7c3aed","on-surface-variant":"#4a4455","surface-tint":"#732ee4","on-primary-container":"#ede0ff","on-surface":"#1a1b23"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","2xl":"1rem","full":"9999px"},spacing:{"space-xl":"2rem","gutter":"1rem","space-md":"0.75rem","margin":"1rem","space-lg":"1.25rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","margin-desktop":"2rem"},fontFamily:{"body-lg":["Inter"],"body-sm":["Inter"],"data-metric":["JetBrains Mono"],"label-caps":["JetBrains Mono"],"headline-md":["Inter"],"display-lg":["Inter"],"display-lg-mobile":["Inter"],"title-md":["Inter"],"body-md":["Inter"],"code-md":["JetBrains Mono"],"code-sm":["JetBrains Mono"],"headline-sm":["Inter"]},fontSize:{"body-lg":["15px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"data-metric":["16px",{"lineHeight":"20px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-caps":["10px",{"lineHeight":"12px","letterSpacing":"0.06em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"title-md":["15px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"20px","fontWeight":"400"}],"code-md":["13px",{"lineHeight":"20px","fontWeight":"400"}],"code-sm":["11px",{"lineHeight":"16px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-[#FBF8FF] font-body-md text-body-md text-on-surface"><div class="fixed top-0 left-0 right-0 z-50"><aside class="h-8 bg-[#F4F2FE] border-b border-outline-variant/40 px-margin-desktop flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-[#7C3AED]"></span><span>IF101 Algorithms Fall 2026 Cohort • Automated Socratic Guardrails &amp; Regex Redaction Active</span></div><div class="flex items-center gap-space-md"><span class="font-code-sm text-code-sm text-secondary">SOCRATIC_KERNEL::v4.2-STABLE</span></div></aside><header class="h-16 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/40 px-margin-desktop shadow-[0_4px_20px_rgb(124,58,237,0.04)]"><div class="h-full flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">PeerStack</span><span class="font-code-sm text-code-sm text-[#7C3AED] font-bold">.io</span></div><div class="h-4 w-px bg-outline-variant/50"></div><span class="px-space-sm py-0.5 rounded-full bg-[#F4F2FE] border border-outline-variant/40 text-on-surface-variant font-code-sm text-code-sm">IF101 Algorithms</span></div><nav class="flex items-center gap-space-lg h-full" data-active-classes="text-[#7C3AED] font-semibold border-b-2 border-[#7C3AED]"><a class="h-full flex items-center px-space-xs text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" data-path="landing" href="#">Landing</a><a class="h-full flex items-center px-space-xs text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" data-path="mentee-pipeline" href="#">Mentee Pipeline</a><a class="h-full flex items-center px-space-xs text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" data-path="mentor-workspace" href="#">Mentor Workspace</a><a aria-current="page" class="h-full flex items-center px-space-xs transition-colors text-[#7C3AED] font-semibold border-b-2 border-[#7C3AED]" data-path="hint-delivery" href="#">Hint Delivery</a><a class="h-full flex items-center px-space-xs text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" data-path="admin-and-metrics" href="#">Admin &amp; Metrics</a></nav><div class="flex items-center gap-space-md"><div class="inline-flex p-0.5 rounded-xl bg-[#F4F2FE] border border-outline-variant/40 font-code-sm text-code-sm text-on-surface-variant"><button class="px-space-sm py-1 rounded-lg bg-surface-container-lowest text-on-surface font-medium shadow-sm" type="button">Mentee</button><button class="px-space-sm py-1 rounded-lg hover:text-on-surface transition-colors" type="button">Mentor</button><button class="px-space-sm py-1 rounded-lg hover:text-on-surface transition-colors" type="button">Supervisor/Admin</button></div><div class="h-4 w-px bg-outline-variant/50"></div><div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#8B5CF6] flex items-center justify-center shadow-sm shadow-purple-500/25"><span class="material-symbols-outlined text-white text-[18px]">person</span></div></div></div></header></div><main class="w-full pt-24 min-h-screen bg-gradient-to-b from-[#FBF8FF] via-[#F4F2FE]/60 to-[#FBF8FF] px-margin-desktop"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Banner / Ticket Metadata Strip -->
+<section class="w-full bg-surface-container-lowest rounded-[20px] p-space-lg shadow-[0_8px_30px_rgb(124,58,237,0.06)] border border-outline-variant/20 mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="px-space-sm py-0.5 rounded-full bg-[#F4F2FE] text-on-surface-variant font-label-caps text-label-caps tracking-wider">
+            TICKET_IDENTIFIER: #T-104
+          </span>
+<span class="px-space-sm py-0.5 rounded-full bg-[#F4F2FE] text-[#7C3AED] font-code-sm text-code-sm font-semibold">
+            IF101 Algorithms • Fall 2026
+          </span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-[#18181B] text-white font-code-sm text-code-sm font-medium shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#A78BFA] animate-pulse"></span>
+            Hints Delivered by Mentor-B12 (Verified Senior Peer)
+          </span>
+</div>
+<div class="flex items-baseline gap-space-md mt-1">
+<h1 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">
+            Recursion StackOverflow in RecursiveFactorial.java
+          </h1>
+<span class="font-code-sm text-code-sm text-secondary">
+            SEV-2 • SUBMITTED 42m AGO
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-start lg:self-center">
+<div class="flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Assigned Pedagogy Lead</span>
+<span class="font-title-md text-title-md text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-[#7C3AED]" style="font-variation-settings: 'FILL' 1;">verified</span>
+            Mentor-B12 (Senior TA)
+          </span>
+</div>
+<div class="w-10 h-10 rounded-full bg-[#F4F2FE] border border-outline-variant/30 flex items-center justify-center text-[#7C3AED] font-data-metric text-data-metric">
+          B12
+        </div>
+</div>
+</div>
+<!-- Stepper Tracker -->
+<div class="mt-space-lg pt-space-md bg-[#F4F2FE] rounded-2xl p-space-md">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md relative">
+<!-- Step 1 -->
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#8B5CF6] flex items-center justify-center text-white shrink-0 shadow-sm shadow-purple-500/20">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Stage 01</span>
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">Ticket Submitted</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#8B5CF6] flex items-center justify-center text-white shrink-0 shadow-sm shadow-purple-500/20">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Stage 02</span>
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">AI Socratic Drafted</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#8B5CF6] flex items-center justify-center text-white shrink-0 shadow-sm shadow-purple-500/20">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Stage 03</span>
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">Mentor Verified</span>
+</div>
+</div>
+<!-- Step 4 (Current) -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest rounded-xl p-space-xs shadow-sm border border-[#7C3AED]/20">
+<div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#8B5CF6] flex items-center justify-center text-white shrink-0 shadow-sm shadow-purple-500/25">
+<span class="w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-[#7C3AED] font-bold uppercase tracking-wider">Active Stage</span>
+<span class="font-body-md text-body-md text-on-surface font-bold truncate">Student Debugging</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Grid Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left Column: Primary Dialectic & Clarification Feed -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Hint 1 Card: Active & High-Contrast Inquiry -->
+<article class="bg-surface-container-lowest rounded-[20px] p-space-lg shadow-[0_8px_30px_rgb(124,58,237,0.06)] border border-outline-variant/20 relative overflow-hidden">
+<div class="flex items-center justify-between gap-space-sm pb-space-sm mb-space-md bg-[#F4F2FE] -mx-space-lg -mt-space-lg px-space-lg pt-space-md border-b border-outline-variant/20">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-[#18181B] flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">
+              Socratic Hint 1 — Guiding Question from Mentor-B12
+            </h2>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-lowest text-secondary font-code-sm text-code-sm shadow-sm">
+            RELEASED • T+12m
+          </span>
+</div>
+<div class="flex flex-col gap-space-md">
+<div class="p-space-md rounded-2xl bg-[#F4F2FE] text-on-surface">
+<p class="font-body-lg text-body-lg leading-relaxed">
+              "Notice what happens when <code class="font-code-md text-code-md bg-surface-container-lowest px-1.5 py-0.5 rounded text-[#7C3AED] shadow-sm">compute()</code> receives an input that is already less than zero (e.g., <code class="font-code-md text-code-md bg-surface-container-lowest px-1.5 py-0.5 rounded text-[#7C3AED] shadow-sm">n = -1</code>). What stops the function from calling <code class="font-code-md text-code-md bg-surface-container-lowest px-1.5 py-0.5 rounded text-[#7C3AED] shadow-sm">compute(-2)</code>?"
+            </p>
+</div>
+<!-- Pedagogical Action Box -->
+<div class="flex items-start gap-space-md p-space-md rounded-2xl bg-tertiary-fixed/70 text-on-tertiary-fixed border border-[#7C3AED]/15">
+<span class="material-symbols-outlined text-[20px] shrink-0 text-[#7C3AED] mt-0.5">edit_note</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-tertiary-fixed-variant uppercase">Recommended Pedagogical Exercise</span>
+<p class="font-body-md text-body-md text-on-tertiary-fixed mt-0.5">
+                Try paper tracing <code class="font-code-sm text-code-sm font-semibold">compute(-1)</code> step-by-step in your notebook. Track stack frame activation registers until depth = 4.
+              </p>
+</div>
+</div>
+<!-- Interactive Action confirmation -->
+<div class="flex items-center justify-between pt-space-xs flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-xs text-secondary font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[16px] text-[#7C3AED]">info</span>
+              Targeting: Base Case Termination Guards
+            </div>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white font-body-md text-body-md font-medium shadow-md shadow-purple-500/20 hover:from-[#6D28D9] hover:to-[#7C3AED] transition-all" id="hint1-ack-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>I checked this — I see the issue!</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Hint 2 Accordion: Optional Deep Guidance -->
+<section class="bg-surface-container-lowest rounded-[20px] shadow-[0_8px_30px_rgb(124,58,237,0.06)] border border-outline-variant/20 overflow-hidden">
+<button class="w-full p-space-lg flex items-center justify-between text-left hover:bg-[#F4F2FE]/60 transition-colors" id="hint2-toggle-btn" type="button">
+<div class="flex items-center gap-space-md">
+<div class="w-7 h-7 rounded-lg bg-[#F4F2FE] text-[#7C3AED] flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">help_center</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-secondary block uppercase">Progressive Disclosure Layer</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">
+                Reveal Hint 2 (Optional Deeper Guidance)
+              </h3>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-code-sm text-code-sm text-secondary">Need a closer pointer?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-200" id="hint2-icon">expand_more</span>
+</div>
+</button>
+<!-- Hidden/Expandable Body -->
+<div class="hidden px-space-lg pb-space-lg pt-space-xs" id="hint2-content">
+<div class="p-space-md rounded-2xl bg-[#F4F2FE] text-on-surface">
+<p class="font-body-lg text-body-lg leading-relaxed">
+              "Think about the domain of the factorial function. What is the mathematical definition of factorial for non-positive integers, and how should Java signal invalid input or terminate?"
+            </p>
+</div>
+<div class="mt-space-md flex items-center gap-space-md p-space-sm rounded-xl bg-surface-container text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[#7C3AED] text-[18px]">terminal</span>
+<span>Consider: <code class="text-[#7C3AED] font-semibold">IllegalArgumentException</code> vs defensive base condition check (<code class="text-[#7C3AED] font-semibold">n &lt;= 0</code>).</span>
+</div>
+</div>
+</section>
+<!-- One-Round Follow-up Query Section -->
+<section class="bg-surface-container-lowest rounded-[20px] p-space-lg shadow-[0_8px_30px_rgb(124,58,237,0.06)] border border-outline-variant/20">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[#7C3AED] text-[20px]">forum</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">
+              One-Round Follow-Up Clarification
+            </h3>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-[#18181B] text-white font-code-sm text-code-sm font-semibold">
+            0 / 1 Used
+          </span>
+</div>
+<!-- Policy notice -->
+<div class="p-space-sm rounded-xl bg-[#F4F2FE] text-on-surface-variant mb-space-md flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-[#7C3AED] mt-0.5">policy</span>
+<p class="font-body-sm text-body-sm">
+            To promote independent algorithmic problem solving, each ticket allows one follow-up query before scheduling a live lab desk session.
+          </p>
+</div>
+<form class="flex flex-col gap-space-md" id="clarification-form" onsubmit="event.preventDefault(); submitFollowUp();">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-caps text-label-caps text-secondary uppercase" for="mentee-query">
+              Student Dialectic Clarification
+            </label>
+<textarea class="w-full p-space-md rounded-2xl bg-[#FBF8FF] border border-outline-variant/50 text-on-surface font-body-md text-body-md placeholder:text-secondary focus:outline-none focus:border-[#7C3AED] focus:bg-surface-container-lowest resize-none shadow-sm transition-colors" id="mentee-query" placeholder="Type your clarifying question to Mentor-B12..." rows="4"></textarea>
+<div class="flex justify-between items-center text-secondary font-code-sm text-code-sm px-1">
+<span>Ask about concepts, edge cases, or test cases (no complete code requests).</span>
+<span id="char-counter">0 / 280</span>
+</div>
+</div>
+<div class="flex justify-end items-center gap-space-md">
+<button class="px-space-md py-2 rounded-xl bg-[#F4F2FE] text-on-surface font-body-md text-body-md font-medium hover:bg-surface-container-high transition-colors" type="button">
+              Save Draft
+            </button>
+<button class="inline-flex items-center gap-space-xs px-space-lg py-2.5 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white font-body-md text-body-md font-medium shadow-md shadow-purple-500/20 hover:from-[#6D28D9] hover:to-[#7C3AED] transition-all" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Send Clarification Question</span>
+</button>
+</div>
+</form>
+</section>
+</div>
+<!-- Right Column: Code Snippet Context & Resolution / Feedback -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Source Code Context Inspector -->
+<aside class="bg-surface-container-lowest rounded-[20px] p-space-md shadow-[0_8px_30px_rgb(124,58,237,0.06)] border border-outline-variant/20">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-[#7C3AED]">code</span>
+<span class="font-code-sm text-code-sm text-on-surface font-semibold">RecursiveFactorial.java</span>
+</div>
+<span class="font-label-caps text-label-caps text-error bg-error-container text-on-error-container px-2 py-0.5 rounded-full">
+            Line 7 Fault
+          </span>
+</div>
+<!-- Dark IDE code block per styling guidelines -->
+<div class="bg-[#0F172A] rounded-2xl p-space-sm text-surface-bright overflow-x-auto">
+<table class="w-full font-code-sm text-code-sm text-left border-collapse">
+<tbody>
+<tr class="opacity-60">
+<td class="pr-space-sm text-[#475569] select-none text-right w-6">1</td>
+<td><span class="text-tertiary-fixed">public class</span> RecursiveFactorial {</td>
+</tr>
+<tr class="opacity-60">
+<td class="pr-space-sm text-[#475569] select-none text-right w-6">2</td>
+<td>  <span class="text-tertiary-fixed">public int</span> compute(<span class="text-tertiary-fixed">int</span> n) {</td>
+</tr>
+<tr class="bg-primary/20">
+<td class="pr-space-sm text-primary-fixed select-none text-right w-6">3</td>
+<td>    <span class="text-[#f87171]">// Missing negative bounds!</span></td>
+</tr>
+<tr class="bg-primary/20">
+<td class="pr-space-sm text-primary-fixed select-none text-right w-6">4</td>
+<td>    <span class="text-tertiary-fixed">if</span> (n == 0) {</td>
+</tr>
+<tr class="bg-primary/20">
+<td class="pr-space-sm text-primary-fixed select-none text-right w-6">5</td>
+<td>      <span class="text-tertiary-fixed">return</span> 1;</td>
+</tr>
+<tr class="bg-primary/20">
+<td class="pr-space-sm text-primary-fixed select-none text-right w-6">6</td>
+<td>    }</td>
+</tr>
+<tr class="bg-primary/30">
+<td class="pr-space-sm text-primary-fixed-dim select-none text-right w-6">7</td>
+<td>    <span class="text-tertiary-fixed">return</span> n * compute(n - 1);</td>
+</tr>
+<tr class="opacity-60">
+<td class="pr-space-sm text-[#475569] select-none text-right w-6">8</td>
+<td>  }</td>
+</tr>
+<tr class="opacity-60">
+<td class="pr-space-sm text-[#475569] select-none text-right w-6">9</td>
+<td>}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</aside>
+<!-- Resolution & Clarity Rating Card -->
+<section class="bg-surface-container-lowest rounded-[20px] p-space-lg shadow-[0_8px_30px_rgb(124,58,237,0.06)] border border-outline-variant/20">
+<div class="flex items-center gap-space-sm pb-space-sm mb-space-md">
+<span class="material-symbols-outlined text-[#7C3AED] text-[20px]">checklist_rtl</span>
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">
+            Resolution &amp; Clarity Rating
+          </h3>
+</div>
+<div class="flex flex-col gap-space-lg">
+<!-- Unblocked Status Question -->
+<div>
+<label class="font-label-caps text-label-caps text-secondary uppercase block mb-space-xs">
+              Did this Socratic guidance unblock your Java code?
+            </label>
+<div class="flex flex-col gap-space-xs mt-space-xs" id="status-group">
+<button class="status-option w-full py-2.5 px-space-md rounded-xl text-left font-body-md text-body-md flex items-center justify-between bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white font-medium shadow-md shadow-purple-500/20 transition-all" data-val="full" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                  Yes, Fully Unblocked
+                </span>
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="status-option w-full py-2.5 px-space-md rounded-xl text-left font-body-md text-body-md flex items-center justify-between bg-[#F4F2FE] text-on-surface hover:bg-surface-container-high transition-all" data-val="partial" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">timelapse</span>
+                  Partially Unblocked
+                </span>
+<span class="material-symbols-outlined text-[18px] opacity-0">check</span>
+</button>
+<button class="status-option w-full py-2.5 px-space-md rounded-xl text-left font-body-md text-body-md flex items-center justify-between bg-[#F4F2FE] text-on-surface hover:bg-surface-container-high transition-all" data-val="stuck" type="button">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                  Still Stuck (Request TA Office Hours)
+                </span>
+<span class="material-symbols-outlined text-[18px] opacity-0">check</span>
+</button>
+</div>
+</div>
+<!-- 5-Star Clarity Rating Widget -->
+<div class="bg-[#F4F2FE] rounded-2xl p-space-md">
+<div class="flex items-center justify-between mb-space-xs">
+<label class="font-label-caps text-label-caps text-secondary uppercase">
+                Rate clarity of Socratic hints
+              </label>
+<span class="font-data-metric text-data-metric text-[#7C3AED] font-bold" id="star-score-text">
+                5.0 / 5.0
+              </span>
+</div>
+<!-- Star selector container -->
+<div class="flex items-center justify-between pt-space-xs" id="star-container">
+<button class="star-btn text-[#7C3AED] hover:scale-110 transition-transform" data-star="1" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="star-btn text-[#7C3AED] hover:scale-110 transition-transform" data-star="2" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="star-btn text-[#7C3AED] hover:scale-110 transition-transform" data-star="3" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="star-btn text-[#7C3AED] hover:scale-110 transition-transform" data-star="4" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button class="star-btn text-[#7C3AED] hover:scale-110 transition-transform" data-star="5" type="button">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<p class="font-code-sm text-code-sm text-secondary mt-space-sm text-center">
+              "Exceptional prompt guiding directly to domain boundaries."
+            </p>
+</div>
+<!-- Submit feedback / close ticket -->
+<button class="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white font-body-md text-body-md font-semibold shadow-md shadow-purple-500/20 hover:from-[#6D28D9] hover:to-[#7C3AED] transition-all flex items-center justify-center gap-space-xs" id="submit-feedback-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span>Submit Feedback &amp; Close Ticket</span>
+</button>
+</div>
+</section>
+<!-- Cohort Telemetry Quick Glance -->
+<div class="bg-surface-container-lowest rounded-[20px] p-space-md shadow-[0_8px_30px_rgb(124,58,237,0.06)] border border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-[#F4F2FE] text-[#7C3AED] flex items-center justify-center font-code-sm text-code-sm font-bold">
+            IF
+          </div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Cohort Resolution Rate</span>
+<span class="font-code-sm text-code-sm text-secondary">Recursion modules</span>
+</div>
+</div>
+<span class="font-data-metric text-data-metric text-[#7C3AED] font-bold">89.4%</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Accordion Toggle for Hint 2
+  const hint2ToggleBtn = document.getElementById('hint2-toggle-btn');
+  const hint2Content = document.getElementById('hint2-content');
+  const hint2Icon = document.getElementById('hint2-icon');
+
+  if (hint2ToggleBtn && hint2Content) {
+    hint2ToggleBtn.addEventListener('click', () => {
+      const isHidden = hint2Content.classList.contains('hidden');
+      if (isHidden) {
+        hint2Content.classList.remove('hidden');
+        hint2Icon.textContent = 'expand_less';
+      } else {
+        hint2Content.classList.add('hidden');
+        hint2Icon.textContent = 'expand_more';
+      }
+    });
+  }
+
+  // Hint 1 Acknowledged feedback micro-interaction
+  const hint1Btn = document.getElementById('hint1-ack-btn');
+  if (hint1Btn) {
+    hint1Btn.addEventListener('click', () => {
+      hint1Btn.className = 'inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-[#18181B] text-white font-body-md text-body-md font-medium shadow-md transition-all';
+      hint1Btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done_all</span><span>Checked! Stack trace analyzed</span>';
+    });
+  }
+
+  // Character counter for textarea
+  const textarea = document.getElementById('mentee-query');
+  const counter = document.getElementById('char-counter');
+  if (textarea && counter) {
+    textarea.addEventListener('input', (e) => {
+      const len = e.target.value.length;
+      counter.textContent = `${len} / 280`;
+      if (len > 280) {
+        counter.classList.add('text-error');
+      } else {
+        counter.classList.remove('text-error');
+      }
+    });
+  }
+
+  // Follow-up Query Submission Simulation
+  function submitFollowUp() {
+    const textVal = textarea ? textarea.value.trim() : '';
+    if (!textVal) return;
+    const form = document.getElementById('clarification-form');
+    if (form) {
+      form.innerHTML = `
+        <div class="p-space-md rounded-2xl bg-[#F4F2FE] text-on-surface flex items-start gap-space-sm">
+          <span class="material-symbols-outlined text-[20px] text-[#7C3AED]">schedule_send</span>
+          <div class="flex flex-col">
+            <span class="font-title-md text-title-md font-semibold text-on-surface">Clarification Dispatched</span>
+            <p class="font-body-md text-body-md text-secondary mt-0.5">"${textVal}"</p>
+            <span class="font-code-sm text-code-sm text-[#7C3AED] font-medium mt-space-xs">Awaiting mentor reply • Response expected &lt; 20m</span>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  // Resolution Status Selectors
+  const statusOptions = document.querySelectorAll('.status-option');
+  statusOptions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      statusOptions.forEach(opt => {
+        opt.className = 'status-option w-full py-2.5 px-space-md rounded-xl text-left font-body-md text-body-md flex items-center justify-between bg-[#F4F2FE] text-on-surface hover:bg-surface-container-high transition-all';
+        const icon = opt.querySelector('span:last-child');
+        if (icon) icon.classList.add('opacity-0');
+      });
+      btn.className = 'status-option w-full py-2.5 px-space-md rounded-xl text-left font-body-md text-body-md flex items-center justify-between bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white font-medium shadow-md shadow-purple-500/20 transition-all';
+      const checkIcon = btn.querySelector('span:last-child');
+      if (checkIcon) checkIcon.classList.remove('opacity-0');
+    });
+  });
+
+  // Interactive Star Rating Widget
+  const starButtons = document.querySelectorAll('.star-btn');
+  const starScoreText = document.getElementById('star-score-text');
+
+  starButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedLevel = parseInt(btn.getAttribute('data-star') || '5', 10);
+      starButtons.forEach(inner => {
+        const starLevel = parseInt(inner.getAttribute('data-star') || '1', 10);
+        const iconSpan = inner.querySelector('.material-symbols-outlined');
+        if (iconSpan) {
+          if (starLevel <= selectedLevel) {
+            iconSpan.style.fontVariationSettings = "'FILL' 1";
+            inner.classList.add('text-[#7C3AED]');
+            inner.classList.remove('text-secondary');
+          } else {
+            iconSpan.style.fontVariationSettings = "'FILL' 0";
+            inner.classList.remove('text-[#7C3AED]');
+            inner.classList.add('text-secondary');
+          }
+        }
+      });
+      if (starScoreText) {
+        starScoreText.textContent = `${selectedLevel}.0 / 5.0`;
+      }
+    });
+  });
+
+  // Final Close / Submit Feedback micro-interaction
+  const submitFeedbackBtn = document.getElementById('submit-feedback-btn');
+  if (submitFeedbackBtn) {
+    submitFeedbackBtn.addEventListener('click', () => {
+      submitFeedbackBtn.className = 'w-full py-2.5 rounded-xl bg-[#18181B] text-white font-body-md text-body-md font-semibold shadow-md transition-all flex items-center justify-center gap-space-xs';
+      submitFeedbackBtn.innerHTML = `
+        <span class="material-symbols-outlined text-[18px]">verified</span>
+        <span>Feedback Logged • Ticket Archived</span>
+      `;
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/40 py-space-lg px-margin-desktop mt-space-xl"><div class="flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-space-sm"><span class="font-code-sm text-code-sm text-on-surface font-semibold">PeerStack Socratic Shell</span><span>• Department of Computer Science &amp; Engineering</span></div><div class="flex items-center gap-space-lg font-code-sm text-code-sm"><span>JAVA_VERSION: OpenJDK 21.0.3</span><span>DIALECTIC_ENGINE: Active</span><span class="text-secondary">© 2026 Academic Cohort Framework</span></div></div></footer></body></html>

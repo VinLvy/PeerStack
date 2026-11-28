@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>PeerStack - IF101 Algorithms</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error-container":"#ffdad6","secondary":"#5f5e61","surface-dim":"#dad9e4","on-tertiary":"#ffffff","tertiary-fixed-dim":"#d0bcff","on-primary-fixed":"#25005a","secondary-fixed-dim":"#c8c5ca","tertiary-container":"#7645e0","primary-fixed":"#eaddff","surface-container-high":"#e9e7f3","on-background":"#1a1b23","on-error":"#ffffff","surface-bright":"#fbf8ff","surface-container-low":"#f4f2fe","surface-container-highest":"#e3e1ed","on-primary-fixed-variant":"#5a00c6","tertiary-fixed":"#e9ddff","inverse-primary":"#d2bbff","on-secondary":"#ffffff","on-secondary-container":"#656467","on-tertiary-fixed-variant":"#5516be","on-tertiary-container":"#ece1ff","outline-variant":"#ccc3d8","outline":"#7b7487","secondary-container":"#e4e1e6","primary-fixed-dim":"#d2bbff","on-error-container":"#93000a","secondary-fixed":"#e4e1e6","tertiary":"#5d25c7","surface-variant":"#e3e1ed","inverse-on-surface":"#f1effb","error":"#ba1a1a","on-primary":"#ffffff","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#47464a","surface-container":"#eeecf8","primary":"#630ed4","on-tertiary-fixed":"#23005c","background":"#fbf8ff","inverse-surface":"#18181b","on-secondary-fixed":"#1b1b1e","surface":"#fbf8ff","primary-container":"#7c3aed","on-surface-variant":"#4a4455","surface-tint":"#732ee4","on-primary-container":"#ede0ff","on-surface":"#1a1b23"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2rem","gutter":"1rem","space-md":"0.75rem","margin":"1rem","space-lg":"1.25rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","margin-desktop":"2rem"},fontFamily:{"body-lg":["Inter"],"body-sm":["Inter"],"data-metric":["JetBrains Mono"],"label-caps":["JetBrains Mono"],"headline-md":["Inter"],"display-lg":["Inter"],"display-lg-mobile":["Inter"],"title-md":["Inter"],"body-md":["Inter"],"code-md":["JetBrains Mono"],"code-sm":["JetBrains Mono"],"headline-sm":["Inter"]},fontSize:{"body-lg":["15px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"data-metric":["16px",{"lineHeight":"20px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-caps":["10px",{"lineHeight":"12px","letterSpacing":"0.06em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"700"}],"title-md":["15px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-md":["13px",{"lineHeight":"20px","fontWeight":"400"}],"code-md":["13px",{"lineHeight":"20px","fontWeight":"400"}],"code-sm":["11px",{"lineHeight":"16px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="bg-[#FBF8FF] font-body-md text-body-md text-on-surface"><div class="fixed top-0 left-0 right-0 z-50"><aside class="h-8 bg-[#F4F2FE] border-b border-outline-variant/40 px-margin-desktop flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps"><div class="flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-[#7C3AED]"></span><span>IF101 Algorithms Fall 2026 Cohort • Automated Socratic Guardrails &amp; Regex Redaction Active</span></div><div class="flex items-center gap-space-md"><span class="px-2 py-0.5 rounded-full bg-[#18181B] text-white font-code-sm text-code-sm">SOCRATIC_KERNEL::v4.2-STABLE</span></div></aside><header class="h-16 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/40 px-margin-desktop shadow-[0_4px_20px_rgba(124,58,237,0.04)]"><div class="h-full flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">PeerStack</span><span class="font-code-sm text-code-sm text-[#7C3AED] font-bold">.io</span></div><div class="h-4 w-px bg-outline-variant/50"></div><span class="px-2.5 py-0.5 rounded-full bg-[#F4F2FE] border border-outline-variant/40 text-on-surface-variant font-code-sm text-code-sm">IF101 Algorithms</span></div><nav class="flex items-center gap-space-lg h-full" data-active-classes="text-[#7C3AED] font-semibold border-b-2 border-[#7C3AED]"><a aria-current="page" class="h-full flex items-center px-space-xs transition-colors text-[#7C3AED] font-semibold border-b-2 border-[#7C3AED]" data-path="landing" href="#">Landing</a><a class="h-full flex items-center px-space-xs text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" data-path="mentee-pipeline" href="#">Mentee Pipeline</a><a class="h-full flex items-center px-space-xs text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" data-path="mentor-workspace" href="#">Mentor Workspace</a><a class="h-full flex items-center px-space-xs text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" data-path="hint-delivery" href="#">Hint Delivery</a><a class="h-full flex items-center px-space-xs text-on-surface-variant font-body-md text-body-md hover:text-on-surface transition-colors" data-path="admin-and-metrics" href="#">Admin &amp; Metrics</a></nav><div class="flex items-center gap-space-md"><div class="inline-flex p-0.5 rounded-full bg-[#F4F2FE] border border-outline-variant/40 font-code-sm text-code-sm text-on-surface-variant"><button class="px-space-sm py-1 rounded-full bg-surface-container-lowest text-on-surface font-medium shadow-sm" type="button">Mentee</button><button class="px-space-sm py-1 rounded-full hover:text-on-surface transition-colors" type="button">Mentor</button><button class="px-space-sm py-1 rounded-full hover:text-on-surface transition-colors" type="button">Supervisor/Admin</button></div><div class="h-4 w-px bg-outline-variant/50"></div><div class="w-8 h-8 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] flex items-center justify-center shadow-md shadow-purple-500/20"><span class="material-symbols-outlined text-white text-[18px]">person</span></div></div></div></header></div><main class="w-full pt-24 min-h-screen bg-[#FBF8FF] px-margin-desktop"><div class="flex flex-col w-full">
+<!-- 1. Top Notice Banner -->
+<section class="w-full bg-[#F4F2FE] rounded-2xl p-space-md mb-space-lg shadow-[0_4px_20px_rgba(124,58,237,0.05)] border border-outline-variant/30">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps">
+<span class="w-1.5 h-1.5 rounded-full bg-[#7C3AED] animate-pulse"></span>
+          ALPHA COHORT NOTICE
+        </span>
+<p class="font-body-md text-body-md text-on-surface">
+<strong class="font-semibold text-on-surface">IF101 Algorithms Fall 2026</strong> semester is now live with automated Socratic guardrails.
+        </p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container-lowest text-[#7C3AED] hover:bg-primary-fixed/40 transition-colors font-body-sm text-body-sm font-medium shadow-sm border border-outline-variant/30" type="button">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+        View Syllabus
+      </button>
+</div>
+</section>
+<!-- 2. Hero Section with Asymmetric Balance -->
+<section class="relative w-full rounded-[20px] bg-surface-container-lowest p-space-xl sm:p-12 mb-space-xl overflow-hidden shadow-[0_12px_40px_rgba(124,58,237,0.08)] border border-outline-variant/25">
+<div class="absolute -right-16 -top-16 w-96 h-96 rounded-full bg-gradient-to-br from-[#7C3AED]/20 to-[#8B5CF6]/30 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/4 -bottom-20 w-80 h-80 rounded-full bg-primary-fixed/50 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-[#F4F2FE] font-label-caps text-label-caps text-on-surface-variant border border-outline-variant/30">
+            COHORT SPEC :: IF101.A1
+          </span>
+<span class="text-secondary font-label-caps text-label-caps">•</span>
+<span class="font-code-sm text-code-sm text-[#7C3AED] font-medium">JAVA 21 LTS DIALECTIC</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight max-w-3xl">
+          Agentic Socratic Peer-Mentoring Without Giving Away the Answer
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          Empower introductory Java students to debug algorithms through guided AI questioning and verified peer review.
+        </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+<button class="inline-flex items-center gap-2 px-space-lg py-3 rounded-2xl bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white font-title-md text-title-md shadow-lg shadow-purple-500/25 hover:opacity-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+            Launch Mentee Queue
+          </button>
+<button class="inline-flex items-center gap-2 px-space-lg py-3 rounded-2xl bg-[#F4F2FE] text-on-surface font-title-md text-title-md hover:bg-surface-container-high transition-all border border-outline-variant/30" type="button">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+            Apply as Peer Mentor
+          </button>
+</div>
+</div>
+<!-- Mini Live Metric Slate -->
+<div class="lg:col-span-4 flex flex-col gap-space-sm bg-[#F4F2FE] p-space-lg rounded-2xl shadow-sm border border-outline-variant/30">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ACTIVE SOCRATIC KERNEL</span>
+<span class="px-2.5 py-0.5 rounded-full bg-[#18181B] text-white font-code-sm text-code-sm">v4.2</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<div class="font-data-metric text-data-metric text-on-surface">99.4%</div>
+<div class="font-label-caps text-label-caps text-secondary">Guardrail Efficacy</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<div class="font-data-metric text-data-metric text-[#7C3AED]">0</div>
+<div class="font-label-caps text-label-caps text-secondary">Direct Sol Leakage</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-space-xs">
+<span class="material-symbols-outlined text-[#7C3AED] text-[16px]">verified</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sandboxed with AST verification</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. 4 Workflow Feature Cards (Instrument Style) -->
+<section class="w-full mb-space-xl">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-secondary">CORE ARCHITECTURE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Pedagogical Guardrail Framework</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary">PIPELINE STAGES: 04</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_8px_30px_rgba(124,58,237,0.05)] hover:shadow-[0_12px_36px_rgba(124,58,237,0.1)] transition-shadow border border-outline-variant/20">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-[#F4F2FE] text-on-surface-variant font-code-sm text-code-sm font-medium">Module 1-6</span>
+<span class="inline-flex items-center gap-1 font-data-metric text-code-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-[#7C3AED]">star</span> 4.9
+            </span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[#7C3AED] text-[20px]">enhanced_encryption</span>
+<h3 class="font-title-md text-title-md text-on-surface">Regex Redaction</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Automatically strips student IDs and credentials from pasted Java source files.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-lg mt-space-md bg-[#F4F2FE]/60 -mx-space-lg -mb-space-lg p-space-md rounded-b-2xl">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Active
+          </span>
+<button class="inline-flex items-center gap-1 font-body-sm text-body-sm font-medium text-[#7C3AED] hover:text-primary" type="button">
+            Inspect Filter <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_8px_30px_rgba(124,58,237,0.05)] hover:shadow-[0_12px_36px_rgba(124,58,237,0.1)] transition-shadow border border-outline-variant/20">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-[#18181B] text-white font-code-sm text-code-sm font-medium">GPT-4o Java</span>
+<span class="inline-flex items-center gap-1 font-data-metric text-code-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-[#7C3AED]">star</span> 4.8
+            </span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[#7C3AED] text-[20px]">psychology_alt</span>
+<h3 class="font-title-md text-title-md text-on-surface">Socratic Draft</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            AI agent generates guiding questions instead of direct solutions for recursion and loops.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-lg mt-space-md bg-[#F4F2FE]/60 -mx-space-lg -mb-space-lg p-space-md rounded-b-2xl">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#7C3AED]"></span> Core
+          </span>
+<button class="inline-flex items-center gap-1 font-body-sm text-body-sm font-medium text-[#7C3AED] hover:text-primary" type="button">
+            Test Prompt <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_8px_30px_rgba(124,58,237,0.05)] hover:shadow-[0_12px_36px_rgba(124,58,237,0.1)] transition-shadow border border-outline-variant/20">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-[#F4F2FE] text-on-surface-variant font-code-sm text-code-sm font-medium">Zero-Trust</span>
+<span class="inline-flex items-center gap-1 font-data-metric text-code-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-[#7C3AED]">star</span> 5.0
+            </span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[#7C3AED] text-[20px]">shield</span>
+<h3 class="font-title-md text-title-md text-on-surface">Integrity Guardrail</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Flags direct copy-pasting of instructor solution keys and blocks instant submissions.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-lg mt-space-md bg-[#F4F2FE]/60 -mx-space-lg -mb-space-lg p-space-md rounded-b-2xl">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Strict
+          </span>
+<button class="inline-flex items-center gap-1 font-body-sm text-body-sm font-medium text-[#7C3AED] hover:text-primary" type="button">
+            View Policy <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_8px_30px_rgba(124,58,237,0.05)] hover:shadow-[0_12px_36px_rgba(124,58,237,0.1)] transition-shadow border border-outline-variant/20">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-[#F4F2FE] text-on-surface-variant font-code-sm text-code-sm font-medium">Max 3 Sessions</span>
+<span class="inline-flex items-center gap-1 font-data-metric text-code-sm text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-[#7C3AED]">star</span> 4.9
+            </span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[#7C3AED] text-[20px]">gate</span>
+<h3 class="font-title-md text-title-md text-on-surface">Capped Mentor Gate</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Limits senior peer mentors to 3 active review sessions to prevent cognitive burnout.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-lg mt-space-md bg-[#F4F2FE]/60 -mx-space-lg -mb-space-lg p-space-md rounded-b-2xl">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Balanced
+          </span>
+<button class="inline-flex items-center gap-1 font-body-sm text-body-sm font-medium text-[#7C3AED] hover:text-primary" type="button">
+            Check Schedule <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. App Bar & Session Queue Section -->
+<section class="w-full bg-surface-container-lowest rounded-[20px] p-space-lg sm:p-space-xl mb-space-xl shadow-[0_8px_30px_rgba(124,58,237,0.06)] border border-outline-variant/25">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-lg">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">IF101 Algorithms Session Queue</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-code-sm text-code-sm font-semibold">4 Pending</span>
+</div>
+<div class="flex items-center gap-space-sm pt-1 font-code-sm text-code-sm text-secondary">
+<span class="text-[#7C3AED] font-medium">Queue (current)</span>
+<span>•</span>
+<span class="hover:text-on-surface cursor-pointer">Redactions</span>
+<span>•</span>
+<span class="hover:text-on-surface cursor-pointer">Guardrails</span>
+<span>•</span>
+<span class="hover:text-on-surface cursor-pointer">Metrics</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<div class="relative min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-xl bg-[#F4F2FE] text-on-surface font-body-md text-body-md placeholder:text-secondary focus:outline-none focus:bg-surface-container-lowest border border-outline-variant/30" placeholder="Search student ID or Java method..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex flex-wrap items-center gap-space-xs pb-space-md">
+<button class="px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white font-body-sm text-body-sm font-medium shadow-sm shadow-purple-500/20" type="button">
+        All Modules
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-[#F4F2FE] text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button">
+        Arrays
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-[#F4F2FE] text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button">
+        Recursion
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-[#F4F2FE] text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" type="button">
+        Object-Oriented
+      </button>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto rounded-2xl border border-outline-variant/25">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-[#F4F2FE] font-label-caps text-label-caps text-secondary uppercase">
+<th class="py-space-sm px-space-md">Student ID</th>
+<th class="py-space-sm px-space-md">Status</th>
+<th class="py-space-sm px-space-md">Java Topic</th>
+<th class="py-space-sm px-space-md">Assigned Mentor</th>
+<th class="py-space-sm px-space-md">Submitted</th>
+<th class="py-space-sm px-space-md text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/25 font-body-md text-body-md">
+<!-- Row 1 -->
+<tr class="hover:bg-[#F4F2FE]/50 transition-colors">
+<td class="py-space-md px-space-md font-code-md text-code-md text-on-surface font-semibold">Mentee-A42</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Pending
+              </span>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant">Recursion</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface">Mentor-B12</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-secondary">Nov 27, 2026</td>
+<td class="py-space-md px-space-md text-right">
+<button class="px-3 py-1 rounded-full bg-[#F4F2FE] hover:bg-gradient-to-r hover:from-[#7C3AED] hover:to-[#8B5CF6] hover:text-white text-on-surface-variant font-code-sm text-code-sm transition-all" type="button">Inspect</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#F4F2FE]/50 transition-colors">
+<td class="py-space-md px-space-md font-code-md text-code-md text-on-surface font-semibold">Mentee-C88</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Socratic
+              </span>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant">BinarySearch</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface">Mentor-F04</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-secondary">Nov 27, 2026</td>
+<td class="py-space-md px-space-md text-right">
+<button class="px-3 py-1 rounded-full bg-[#F4F2FE] hover:bg-gradient-to-r hover:from-[#7C3AED] hover:to-[#8B5CF6] hover:text-white text-on-surface-variant font-code-sm text-code-sm transition-all" type="button">Inspect</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#F4F2FE]/50 transition-colors">
+<td class="py-space-md px-space-md font-code-md text-code-md text-on-surface font-semibold">Mentee-B19</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#7C3AED]"></span> Verified
+              </span>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant">MergeSort</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface">Mentor-A03</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-secondary">Nov 26, 2026</td>
+<td class="py-space-md px-space-md text-right">
+<button class="px-3 py-1 rounded-full bg-[#F4F2FE] hover:bg-gradient-to-r hover:from-[#7C3AED] hover:to-[#8B5CF6] hover:text-white text-on-surface-variant font-code-sm text-code-sm transition-all" type="button">Inspect</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#F4F2FE]/50 transition-colors">
+<td class="py-space-md px-space-md font-code-md text-code-md text-on-surface font-semibold">Mentee-F03</td>
+<td class="py-space-md px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-code-sm text-code-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Flagged
+              </span>
+</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface-variant">NullPointer</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-on-surface">Mentor-E99</td>
+<td class="py-space-md px-space-md font-code-sm text-code-sm text-secondary">Nov 26, 2026</td>
+<td class="py-space-md px-space-md text-right">
+<button class="px-3 py-1 rounded-full bg-[#F4F2FE] hover:bg-gradient-to-r hover:from-[#7C3AED] hover:to-[#8B5CF6] hover:text-white text-on-surface-variant font-code-sm text-code-sm transition-all" type="button">Inspect</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- 5 & 6. Side-by-side Dialectic Chat & Active Review Code Preview -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- 5. Interactive Socratic Chat Preview -->
+<div class="lg:col-span-6 flex flex-col justify-between bg-surface-container-lowest rounded-[20px] p-space-lg shadow-[0_8px_30px_rgba(124,58,237,0.06)] border border-outline-variant/25">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-[#7C3AED]"></div>
+<h3 class="font-title-md text-title-md text-on-surface">Socratic Dialectic Session #4029</h3>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-[#18181B] text-white font-code-sm text-code-sm">GUARDRAIL_LEVEL: STRICT</span>
+</div>
+<!-- Chat Transcript -->
+<div class="space-y-space-md max-h-[460px] overflow-y-auto pr-1">
+<!-- Bubble 1: Mentee -->
+<div class="flex flex-col items-start">
+<span class="font-label-caps text-label-caps text-secondary mb-1">MENTEE :: RECURSIVE FIBONACCI</span>
+<div class="bg-[#F4F2FE] p-space-md rounded-2xl rounded-tl-sm max-w-[90%] text-on-surface font-body-md text-body-md">
+              My recursive Fibonacci method keeps hitting a StackOverflowError when n gets above 40. Can you give me the base case code?
+            </div>
+</div>
+<!-- Bubble 2: Socratic AI -->
+<div class="flex flex-col items-end">
+<span class="px-2 py-0.5 rounded-full bg-[#18181B] text-white font-label-caps text-label-caps mb-1">SOCRATIC AI AGENT</span>
+<div class="bg-primary-fixed/40 p-space-md rounded-2xl rounded-tr-sm max-w-[90%] text-on-surface font-body-md text-body-md border border-primary-fixed">
+              I can't write the base case for you, but let's look at what happens when <code class="font-code-sm text-code-sm text-[#7C3AED] bg-white px-1.5 py-0.5 rounded">n</code> reaches 0 or 1. What value should <code class="font-code-sm text-code-sm text-[#7C3AED] bg-white px-1.5 py-0.5 rounded">fib(0)</code> return?
+            </div>
+</div>
+<!-- Bubble 3: Mentee -->
+<div class="flex flex-col items-start">
+<span class="font-label-caps text-label-caps text-secondary mb-1">MENTEE</span>
+<div class="bg-[#F4F2FE] p-space-md rounded-2xl rounded-tl-sm max-w-[90%] text-on-surface font-body-md text-body-md">
+              It should return 0, because the sequence starts with 0 and 1.
+            </div>
+</div>
+<!-- Bubble 4: Socratic AI -->
+<div class="flex flex-col items-end">
+<span class="px-2 py-0.5 rounded-full bg-[#18181B] text-white font-label-caps text-label-caps mb-1">SOCRATIC AI AGENT</span>
+<div class="bg-primary-fixed/40 p-space-md rounded-2xl rounded-tr-sm max-w-[90%] text-on-surface font-body-md text-body-md border border-primary-fixed">
+              Spot on. Now, what does your recursive step do after checking those base conditions? Are you making the problem smaller?
+            </div>
+</div>
+<!-- Bubble 5: Mentee -->
+<div class="flex flex-col items-start">
+<span class="font-label-caps text-label-caps text-secondary mb-1">MENTEE</span>
+<div class="bg-[#F4F2FE] p-space-md rounded-2xl rounded-tl-sm max-w-[90%] text-on-surface font-body-md text-body-md">
+              I am calling <code class="font-code-sm text-code-sm text-[#7C3AED] bg-white px-1.5 py-0.5 rounded">fib(n-1) + fib(n-2)</code>, but I forgot to memoize the results, so it's recalculating the same subtree millions of times.
+            </div>
+</div>
+</div>
+</div>
+<!-- Chat Input Area -->
+<div class="pt-space-md mt-space-md">
+<div class="relative flex items-center">
+<input class="w-full pl-4 pr-14 py-3 rounded-2xl bg-[#F4F2FE] text-on-surface font-body-md text-body-md placeholder:text-secondary focus:outline-none focus:bg-surface-container-lowest shadow-sm border border-outline-variant/30" placeholder="Ask your Socratic AI mentor a guiding question..." type="text"/>
+<button class="absolute right-2 p-2 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white hover:opacity-95 transition-opacity shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-2 px-1 text-secondary font-label-caps text-label-caps">
+<span>RULE: DIRECT SYNTAX BLOCKS ACTIVATED</span>
+<span>LATENCY: 142ms</span>
+</div>
+</div>
+</div>
+<!-- 6. Active Review Status Card & Redaction Code Preview -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<!-- Active Review Status -->
+<div class="bg-surface-container-lowest rounded-[20px] p-space-lg shadow-[0_8px_30px_rgba(124,58,237,0.06)] border border-outline-variant/25">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-code-sm text-code-sm">Active Review</span>
+<span class="font-code-md text-code-md font-semibold text-on-surface">RecursiveFactorial.java</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Method <code class="font-code-sm text-code-sm text-[#7C3AED] bg-primary-fixed/40 px-1.5 py-0.5 rounded">calculateFactorial(int n)</code> in RecursionLab.java</p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#18181B] text-white font-body-sm text-body-sm font-medium hover:bg-zinc-800 transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span>
+            Release Hint
+          </button>
+</div>
+<div class="flex items-center gap-2 font-code-sm text-code-sm text-[#7C3AED]">
+<span class="w-2 h-2 rounded-full bg-[#7C3AED] animate-pulse"></span>
+          Socratic Guardrail Active • 2 guiding hints provided
+        </div>
+</div>
+<!-- Code Box: Java Source Code Preview with Slate Styling -->
+<div class="flex flex-col flex-1 bg-[#18181B] rounded-[20px] p-space-lg text-inverse-on-surface shadow-[0_12px_36px_rgba(24,24,27,0.18)] overflow-hidden">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm border-b border-white/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">code</span>
+<span class="font-code-sm text-code-sm text-white font-semibold">Java Source Code Preview</span>
+</div>
+<button class="inline-flex items-center gap-1 font-code-sm text-code-sm text-tertiary-fixed hover:text-white transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+            Reload Sample Bug
+          </button>
+</div>
+<div class="font-code-sm text-code-sm text-secondary-fixed mb-space-sm">
+          IF101 Algorithms Fall 2026 Sandbox - Sanitized by Regex Redaction
+        </div>
+<!-- Code Snippet Area -->
+<div class="font-code-md text-code-md leading-relaxed bg-white/5 p-space-md rounded-xl overflow-x-auto text-surface-bright mb-space-md">
+<pre class="font-code-md text-code-md"><span class="text-secondary-fixed">09</span>  <span class="text-tertiary-fixed">public class</span> <span class="text-surface-bright">RecursionLab</span> {
+<span class="text-secondary-fixed">10</span>      <span class="text-secondary-fixed">// Mentee ID: [REDACTED_STUDENT_HASH_7A4]</span>
+<span class="text-secondary-fixed">11</span>      <span class="text-tertiary-fixed">public long</span> <span class="text-primary-fixed">calculateFactorial</span>(<span class="text-tertiary-fixed">int</span> n) {
+<span class="text-secondary-fixed">12</span>          <span class="text-secondary-fixed">// Base condition check</span>
+<span class="text-secondary-fixed">13</span>          <span class="text-tertiary-fixed">if</span> (n &lt;= 1) {
+<span class="bg-error-container/30 text-error-container block -mx-2 px-2 py-0.5 rounded"><span class="text-error-container">14</span>              <span class="text-tertiary-fixed">return</span> 1; <span class="text-on-error-container font-label-caps text-label-caps">// [FLAGGED: Direct Solution Template]</span></span><span class="text-secondary-fixed">15</span>          }
+<span class="text-secondary-fixed">16</span>          <span class="text-tertiary-fixed">return</span> n * calculateFactorial(n - 1);
+<span class="text-secondary-fixed">17</span>      }
+<span class="text-secondary-fixed">18</span>  }</pre>
+</div>
+<!-- Warning banner: Integrity Guardrail Block -->
+<div class="mt-auto bg-error-container text-on-error-container p-space-md rounded-xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-error">gpp_bad</span>
+<div>
+<div class="font-label-caps text-label-caps font-bold tracking-wider text-error">INTEGRITY GUARDRAIL BLOCK</div>
+<div class="font-body-sm text-body-sm text-on-error-container">
+                Direct solution snippet detected on line 14. Socratic filter engaged to prevent code leakage.
+              </div>
+</div>
+</div>
+<button class="shrink-0 px-3 py-1.5 rounded-full bg-surface-container-lowest text-error font-body-sm text-body-sm font-semibold hover:bg-surface-container transition-colors shadow-sm" type="button">
+            Review Guidelines
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Pilot Kanban Board Overview -->
+<section class="w-full bg-surface-container-lowest rounded-[20px] p-space-lg sm:p-space-xl mb-space-xl shadow-[0_8px_30px_rgba(124,58,237,0.06)] border border-outline-variant/25">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm mb-space-lg">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Fall 2026 Pilot Cohort Board</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time dialectic state tracking across 12 assigned algorithm lab sessions</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#18181B] text-white font-code-sm text-code-sm">
+<span class="w-2 h-2 rounded-full bg-[#8B5CF6] animate-ping"></span> Live Sync
+        </span>
+</div>
+</div>
+<!-- Kanban Grid (3 Columns) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Column 1: Submitted (4 cards) -->
+<div class="flex flex-col gap-space-md bg-[#F4F2FE] p-space-md rounded-2xl">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-title-md text-title-md text-on-surface">Submitted</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-code-sm text-code-sm">4</span>
+</div>
+<!-- Submitted Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-A10</span>
+<span class="font-label-caps text-label-caps text-secondary">JDK 21</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">QuickSort Pivot Strategy</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-[#F4F2FE] text-on-surface font-code-sm text-code-sm">Sorting</span>
+<div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white flex items-center justify-center font-code-sm text-[10px] font-bold">M1</div>
+</div>
+</div>
+<!-- Submitted Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-K91</span>
+<span class="font-label-caps text-label-caps text-secondary">JDK 21</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">BreadthFirstSearch Queue Loop</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-[#F4F2FE] text-on-surface font-code-sm text-code-sm">Graphs</span>
+<div class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-code-sm text-[10px] font-bold">M2</div>
+</div>
+</div>
+<!-- Submitted Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-D44</span>
+<span class="font-label-caps text-label-caps text-secondary">JDK 21</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">MinHeap Insertion Invariant</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-[#F4F2FE] text-on-surface font-code-sm text-code-sm">PriorityQueue</span>
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-code-sm text-[10px] font-bold">M3</div>
+</div>
+</div>
+<!-- Submitted Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-Z12</span>
+<span class="font-label-caps text-label-caps text-secondary">JDK 21</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">LinkedList Cycle Detection</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-[#F4F2FE] text-on-surface font-code-sm text-code-sm">Pointers</span>
+<div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white flex items-center justify-center font-code-sm text-[10px] font-bold">M4</div>
+</div>
+</div>
+</div>
+<!-- Column 2: Socratic Review (4 cards) -->
+<div class="flex flex-col gap-space-md bg-[#F4F2FE] p-space-md rounded-2xl">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#7C3AED]"></span>
+<span class="font-title-md text-title-md text-on-surface">Socratic Review</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-code-sm text-code-sm">4</span>
+</div>
+<!-- Socratic Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-C88</span>
+<span class="px-2 py-0.5 rounded-full bg-[#18181B] text-white font-label-caps text-label-caps">Dialectic AI</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Binary Search Boundary Off-By-One</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-code-sm text-code-sm">Search</span>
+<div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white flex items-center justify-center font-code-sm text-[10px] font-bold">F4</div>
+</div>
+</div>
+<!-- Socratic Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-E22</span>
+<span class="px-2 py-0.5 rounded-full bg-[#18181B] text-white font-label-caps text-label-caps">Dialectic AI</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">AVL Tree Double Rotation Cases</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-code-sm text-code-sm">Trees</span>
+<div class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-code-sm text-[10px] font-bold">R1</div>
+</div>
+</div>
+<!-- Socratic Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-G73</span>
+<span class="px-2 py-0.5 rounded-full bg-[#18181B] text-white font-label-caps text-label-caps">Dialectic AI</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Dijkstra Priority Re-Weighting</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-code-sm text-code-sm">Greedy</span>
+<div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white flex items-center justify-center font-code-sm text-[10px] font-bold">L9</div>
+</div>
+</div>
+<!-- Socratic Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-W15</span>
+<span class="px-2 py-0.5 rounded-full bg-[#18181B] text-white font-label-caps text-label-caps">Dialectic AI</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Dynamic Knapsack Subproblem Matrix</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-code-sm text-code-sm">DP</span>
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-code-sm text-[10px] font-bold">T2</div>
+</div>
+</div>
+</div>
+<!-- Column 3: Verified Pass (4 cards) -->
+<div class="flex flex-col gap-space-md bg-[#F4F2FE] p-space-md rounded-2xl">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-title-md text-title-md text-on-surface">Verified Pass</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-code-sm text-code-sm">4</span>
+</div>
+<!-- Verified Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-B19</span>
+<span class="font-label-caps text-label-caps text-[#7C3AED]">PASSED TEST</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">MergeSort In-Place Auxiliary Array</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-code-sm text-code-sm">Algorithms</span>
+<div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white flex items-center justify-center font-code-sm text-[10px] font-bold">A3</div>
+</div>
+</div>
+<!-- Verified Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-H50</span>
+<span class="font-label-caps text-label-caps text-[#7C3AED]">PASSED TEST</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">HashMap Open Addressing Collisions</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-code-sm text-code-sm">Hashing</span>
+<div class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-code-sm text-[10px] font-bold">P6</div>
+</div>
+</div>
+<!-- Verified Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-P08</span>
+<span class="font-label-caps text-label-caps text-[#7C3AED]">PASSED TEST</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Trie String Prefix Lookups</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-code-sm text-code-sm">Strings</span>
+<div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white flex items-center justify-center font-code-sm text-[10px] font-bold">V8</div>
+</div>
+</div>
+<!-- Verified Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-md text-code-md font-semibold text-on-surface">Mentee-X82</span>
+<span class="font-label-caps text-label-caps text-[#7C3AED]">PASSED TEST</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Topological Sorting with Kahn's Algo</p>
+<div class="flex items-center justify-between pt-1">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-code-sm text-code-sm">DAG</span>
+<div class="w-6 h-6 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#8B5CF6] text-white flex items-center justify-center font-code-sm text-[10px] font-bold">K4</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Demo Micro-script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Small interaction to allow filter switching in session queue
+      const chips = document.querySelectorAll('button:has-text');
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/40 py-space-lg px-margin-desktop mt-space-xl"><div class="flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-space-sm"><span class="font-code-sm text-code-sm text-on-surface font-semibold">PeerStack Socratic Shell</span><span>• Department of Computer Science &amp; Engineering</span></div><div class="flex items-center gap-space-lg font-code-sm text-code-sm"><span>JAVA_VERSION: OpenJDK 21.0.3</span><span>DIALECTIC_ENGINE: Active</span><span class="text-secondary">© 2026 Academic Cohort Framework</span></div></div></footer></body></html>
