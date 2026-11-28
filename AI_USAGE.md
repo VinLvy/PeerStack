@@ -32,3 +32,9 @@ This file records AI-assisted implementation work per milestone for transparency
 - Implemented Admin Pilot Metrics M1-M8 live dashboard with synthetic data toggle: `app/admin/metrics/page.tsx`.
 - Updated `README.md`, `DECISIONS.md`, and `AI_USAGE.md` with known limitations and milestone attribution.
 - Expanded `README.md` into a full project, architecture, route, guardrail/redaction, metrics, and proposal-sync reference.
+
+## Milestone M5 (Test C tooling)
+
+- Added the offline Test C benchmark script (`scripts/testc/benchmark_gemini_v2.mjs`), drafted with Claude (Anthropic) and reviewed by the team.
+- Antigravity assisted with the rule-by-rule guardrail comparison (`lib/guardrail.ts` vs `scripts/testc/benchmark_gemini_v2.mjs`), `package.json` npm scripts and MIT license metadata, `.gitignore` rules, and Test C documentation in `README.md` and `AI_USAGE.md`.
+- Files touched: `scripts/testc/benchmark_gemini_v2.mjs`, `package.json`, `.gitignore`, `README.md`, `AI_USAGE.md`.

@@ -35,6 +35,9 @@ coverage/
 # ------------------------------------------------------------------------------
 # 4. Environment Variables & Secrets
 # ------------------------------------------------------------------------------
+.env
+.env.local
+.env*.local
 .env*
 !.env.example
 !.env.template
@@ -98,3 +101,9 @@ $RECYCLE.BIN/
 *.tmp
 *.bak
 .cache/
+
+# ------------------------------------------------------------------------------
+# 12. Test C Dry-Run Mock Artifacts (Keep Live Results & Labeling Sheets Tracked)
+# ------------------------------------------------------------------------------
+results/testc/dry-*
+results/testc/labeling-dry-*
